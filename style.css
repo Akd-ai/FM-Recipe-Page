@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Young Serif;
+  src: url(/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url(/assets/fonts/outfit/static/Outfit-Regular.ttf);
+  font-weight: 400, 600, 700;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,36 +28,38 @@
 }
 
 body {
+  font-family: "Young Serif", sans-serif;
   background-color: var(--Rose-50);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* margin: 50px; */
 }
 main {
-  /* display: grid;
-  place-items: center;  */
-  /* min-height: 100vh; */
   background-color: var(--White);
   max-width: 500px;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
   padding: 2.18em;
   border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-container img {
   width: 100%;
   border-radius: 15px;
-  object-fit: cover; /* gpt */
+  object-fit: cover;
 }
 .main-container h1 {
   color: var(--Stone-900);
   font-size: 2em;
-  font-weight: 900;
+  font-weight: 400;
+}
+p,
+li {
+  font-family: Outfit;
+  font-weight: 500;
 }
 
 .main-container p {
@@ -67,22 +81,18 @@ h3 {
 h4 {
   color: var(--Rose-800);
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0.6em;
 }
 
 .prep-time {
   background-color: var(--Rose-50);
   color: var(--Stone-600);
-  padding: 1.25em; /* gpt increasr to match */
+  padding: 1.25em;
   border-radius: 20px;
-  /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
 }
 
 ul,
 ol {
-  /* margin: 0; */
   color: var(--Stone-600);
   padding-left: 0;
   margin-inline-start: 10px;
@@ -92,19 +102,15 @@ li:last-of-type {
   padding-bottom: 0.625em;
 }
 li {
-  margin-bottom: 10px;
+  margin-bottom: 0.6em;
+  margin-left: 1.25em;
   word-wrap: break-word;
 }
 
-/* li::marker {
-    margin-right: 10px;
-    text-indent: 10px;
-} */
-
 .nutrition {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 1.8rem;
 }
 .colored {
   color: var(--Brown-800);
@@ -115,6 +121,7 @@ li {
 .attribution {
   font-size: 13px;
   text-align: center;
+  word-wrap: break-word;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -127,6 +134,7 @@ li {
     margin: 0;
     padding: 1px;
   }
+
   main {
     background-color: none;
     width: 100%;
@@ -136,5 +144,28 @@ li {
   .main-container img {
     border-radius: 0;
     width: 100%;
+  }
+  .text-container {
+    padding: 0.2em 1.9em 0.8em;
+  }
+  .prep-time {
+    padding: 1.8em;
+  }
+  li {
+    margin-left: 1.25em;
+  }
+}
+@media (max-width: 375px) {
+  h1 {
+    word-wrap: break-word;
+  }
+  .text-container {
+    padding: 0.2em 1.9em 0.8em;
+  }
+  li {
+    margin-left: 1.25em;
+  }
+  .prep-time {
+    padding: 1.5em;
   }
 }
